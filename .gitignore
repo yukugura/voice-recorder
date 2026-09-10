@@ -38,3 +38,6 @@ run/
 **/src/generated/**/.cache/
 repo/
 !**/src/**/repo/
+
+# Local reference checkout; it is not part of this mod or its release source.
+plasmovoice-source/

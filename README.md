@@ -1,25 +1,45 @@
+# Voice Recorder
 
-Installation information
-=======
+Minecraft 1.21.1 / NeoForge 用の、Plasmo Voice 対応ボイスレコーダーMODです。
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+## クレジット
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+企画・仕様・テスト：プロジェクトオーナー
+実装支援：OpenAI Codex
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+このMODはOpenAI Codexを用いた共同作業で制作されました。
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+## 必要環境
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+- Minecraft 1.21.1
+- NeoForge 21.1.0 以上
+- Plasmo Voice 2.1.13 以上
+
+このMODとPlasmo Voiceは、**サーバーと参加する全クライアントの両方**へ導入してください。
+
+## 使い方
+
+1. 空のレコーダーを右クリックして録音を開始します。
+2. もう一度右クリックするか、60秒に達すると録音を終了します。
+3. 録音済みレコーダーは再録音できず、右クリックで本人に再生されます。
+4. 録音済みレコーダーと空のレコーダーをクラフト欄へ置くと、元を残したまま複製できます。
+
+録音データはサーバーの `config/voice-terminal/recorders` に、48kHz・モノラル・16bit PCMとして保存されます。アイテムには録音データ本体ではなく参照IDだけを保持するため、複製してもサーバー容量は増えません。
+
+## レシピ
+
+```text
+鉄インゴット | レッドストーン | 鉄インゴット
+鉄インゴット | 金インゴット   | 鉄インゴット
+鉄インゴット | 鉄インゴット   | 鉄インゴット
+```
+
+## 制限と注意
+
+- 録音できるのは操作した本人のマイクのみです。
+- 再生音は操作した本人にだけ聞こえます。
+- このベータ版では、録音を削除してもサーバーのPCMファイルは自動削除されません。
+
+## 開発
+
+JDK 21で `gradlew.bat build` を実行します。

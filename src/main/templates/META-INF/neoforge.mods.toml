@@ -39,14 +39,16 @@ displayName="${mod_name}" #mandatory
 #logoFile="examplemod.png" #optional
 
 # A text field displayed in the mod UI
-#credits="" #optional
+credits="Created with implementation assistance from OpenAI Codex."
 
 # The authors of the mod, displayed in the mod UI (optional)
 #authors=""
 
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-Example mod description.
+A handheld voice recorder for Plasmo Voice.
+Record only your own microphone for up to one minute, then replay or duplicate
+the server-stored recording with a physical recorder item.
 '''
 
 # The [[mixins]] block allows you to declare your mixin config to FML so that it gets loaded.
@@ -69,7 +71,9 @@ Example mod description.
     # Optional field describing why the dependency is required or why it is incompatible
     # reason="..."
     # The version range of the dependency
-    versionRange="[${neo_version},)" #mandatory
+    # Keep the runtime requirement compatible with the complete 1.21.1
+    # NeoForge line. The project itself is compiled with a newer 21.1 build.
+    versionRange="[21.1.0,)" #mandatory
     # An ordering relationship for the dependency.
     # BEFORE - This mod is loaded BEFORE the dependency
     # AFTER - This mod is loaded AFTER the dependency
@@ -84,6 +88,13 @@ Example mod description.
     # This version range declares a minimum of the current minecraft version up to but not including the next major version
     versionRange="${minecraft_version_range}"
     ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="plasmovoice"
+    type="required"
+    versionRange="[2.1.13,)"
+    ordering="AFTER"
     side="BOTH"
 
 # Features are specific properties of the game environment, that you may want to declare you require. This example declares

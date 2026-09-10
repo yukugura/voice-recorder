@@ -1,0 +1,20 @@
+{
+  "itemGroup.voiceterminal": "Voice Recorder",
+  "item.voiceterminal.terminal": "Voice Terminal",
+  "item.voiceterminal.voice_slip": "Voice Slip",
+  "item.voiceterminal.recorder": "Recorder",
+  "item.voiceterminal.recorded_recorder": "Recorded Recorder",
+  "message.voiceterminal.open_hint": "Voice Terminal: GUI transport will be added next. Sneak-use to arm recording.",
+  "message.voiceterminal.armed": "Recorder armed. Hold the Plasmo Voice 'terminal_record' hotkey, speak, then release it.",
+  "message.voiceterminal.disarmed": "Recorder disarmed.",
+  "message.voiceterminal.imported": "Recording registered in your terminal library.",
+  "message.voiceterminal.invalid_slip": "This voice slip has no valid recording.",
+  "activation.voiceterminal.record": "Terminal recording",
+  "screen.voiceterminal.title": "Voice Terminal",
+  "screen.voiceterminal.status": "Recordings and library",
+  "screen.voiceterminal.record": "Arm recording",
+  "screen.voiceterminal.library": "Recording library",
+  "screen.voiceterminal.close": "Close",
+  "screen.voiceterminal.record_help": "Sneak-use the terminal, then hold the Terminal Recording hotkey while speaking.",
+  "screen.voiceterminal.library_help": "Library browsing and playback are being implemented."
+}

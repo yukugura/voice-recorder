@@ -27,7 +27,7 @@ sourceSets.main.resources {
 }
 
 repositories {
-    // Add here additional repositories if required by some of the dependencies below.
+    maven { url = 'https://repo.plasmoverse.com/releases' }
 }
 
 base {
@@ -116,6 +116,9 @@ configurations {
 }
 
 dependencies {
+    // Voice Terminal is a Plasmo Voice add-on. The API is compile-only: the
+    // Plasmo Voice mod jar is supplied by the server and every participating client.
+    compileOnly "su.plo.voice.api:server:${plasmo_voice_version}"
     // Example optional mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
     // compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"
